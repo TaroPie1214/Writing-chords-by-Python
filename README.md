@@ -1,2 +1,2 @@
-# Automatic-Composition
-Generate random melody under specific rules.
+# Bilibili @香芋派Rua
+惊了！竟然真的会有人来看代码！
