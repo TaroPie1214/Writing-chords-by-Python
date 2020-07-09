@@ -64,7 +64,7 @@ def add_column_chord(root, name, format, length, track, root_base=0, channel=0):
         track.append(Message('note_on', note=note, velocity=56, time=0, channel=channel))
     for dis in format:
         note = root_note + chord[dis]
-        if dis == 0:
+        if dis == format[0]:
             track.append(Message('note_off', note=note, velocity=56, time=round(time), channel=channel))
         else:
             track.append(Message('note_off', note=note, velocity=56, time=0, channel=channel))
@@ -76,7 +76,7 @@ def chord(track):
     add_column_chord('C', 'maj3', format, 4, track)
 
 def chord1(track):
-    format = [0,1,2]
+    format = [1,2,3]
     add_column_chord('C','maj3',format,2,track)
     add_column_chord('C','maj3',format,2,track)
     add_column_chord('A','min3',format,2,track,-1)
@@ -94,7 +94,7 @@ def chord2(track):
     add_broken_chord('G','maj3',format,4,track,-1)
 
 #chord(track)
-#chord1(track)
-chord2(track)
+chord1(track)
+#chord2(track)
 
 mid.save('newSong.mid')
